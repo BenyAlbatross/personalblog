@@ -81,6 +81,7 @@ export default function Cite({ id, index: propIndex }: Props) {
                 <HoverCard.Content
                     className="z-50 w-80 bg-surface border border-stone-200 dark:border-stone-800 rounded-lg shadow-lg p-5 animate-in fade-in zoom-in-95 duration-200"
                     sideOffset={5}
+                    collisionPadding={8}
                 >
                     <div className="flex flex-col gap-1.5 font-sans">
                         <h4 className="font-bold text-primary text-base leading-snug">
@@ -104,7 +105,6 @@ export default function Cite({ id, index: propIndex }: Props) {
                                 https://doi.org/{entry.doi}
                             </a>
                         )}
-                        <HoverCard.Arrow className="fill-background stroke-stone-200 dark:stroke-stone-800" />
                     </div>
                 </HoverCard.Content>
             </HoverCard.Portal>
