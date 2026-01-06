@@ -1,0 +1,66 @@
+---
+title: "Digital Garden Demo: Interaction Types"
+description: "Demonstrating the new MDX components: Smart Citations, Glossary Terms, and Side Notes."
+date: "2024-03-24"
+---
+import Cite from "../../components/mdx/Cite";
+import Glossary from "../../components/mdx/Glossary";
+import SideNote from "../../components/mdx/SideNote";
+
+Welcome to this digital garden demo. This post tests the custom **Interaction Design System**.
+
+## 1. External Hyperlinks
+Standard links to external sites should show an arrow icon and open in a new tab.
+Check out [Google](https://google.com) or the [Astro Documentation](https://docs.astro.build).
+
+## 2. Smart Citations
+We reference academic papers like *Attention Is All You Need* <Cite id="vaswani2017attention" client:visible /> which introduced the Transformer model.
+Another classic is Tufte's work on visualization <Cite id="tufte2001visual" client:visible />.
+
+Hover over the citations to see details.
+
+## 3. Glossary Terms
+We often use terms like <Glossary term="llm" client:visible>Large Language Models</Glossary> or <Glossary term="mdx" client:visible /> without explaining them inline.
+Hover (or tap) to see the definition.
+
+## 4. Side Notes
+Here is a paragraph with a side note. <SideNote client:visible>This is a **side note**. It contains *rich text*, [links](https://example.com), and explains the context further. On desktop, it appears as a popover. On mobile, it expands inline (Tufte-style).</SideNote> This text continues after the side note marker.
+
+## 5. Mathematical Equations
+We can also render mathematical equations using **LaTeX**.
+For example, the mass-energy equivalence is:
+
+$$
+E = mc^2
+$$
+
+Or inline equations like this: $a^2 + b^2 = c^2$.
+
+## Conclusion
+This system allows for a "Clean Futurist" reading experience.
+
+## UI Debugging
+
+### Code Block Rendering
+```typescript
+interface Props {
+  term: string;
+  definition: string;
+}
+
+function TestComponent({ term }: Props) {
+  return <div>{term}</div>;
+}
+```
+### Image Rendering
+<figure>
+    <img 
+        src="/Two-layer_feedforward_artificial_neural_network.png" 
+        alt="Two-layer feedforward artificial neural network" 
+    />
+    <figcaption>
+        Figure 1: Two-layer feedforward artificial neural network.
+    </figcaption>
+</figure>
+
+This is a paragraph of text immediately following the image and caption. We are using this to check if there is excessive spacing between the media element and the flow of the article text. It should look comfortable but not disconnected.

@@ -6,6 +6,11 @@ import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 
+import Link from "@components/mdx/Link";
+import Cite from "@components/mdx/Cite";
+import Glossary from "@components/mdx/Glossary";
+import SideNote from "@components/mdx/SideNote";
+
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
     .filter(post => !post.data.draft)
@@ -43,7 +48,7 @@ const { Content } = await post.render();
       </div>
     </div>
     <article class="animate">
-      <Content />
+      <Content components={{ a: Link, Cite, Glossary, SideNote }} />
     </article>
   </Container>
 </PageLayout>

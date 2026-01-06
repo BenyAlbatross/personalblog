@@ -1,0 +1,14 @@
+{
+    "llm": {
+        "term": "Large Language Model",
+        "definition": "A type of artificial intelligence algorithm that uses deep learning techniques and vastly large data sets to understand, summarize, generate, and predict new content."
+    },
+    "mdx": {
+        "term": "MDX",
+        "definition": "Markdown for the component era. It lets you write JSX in your Markdown documents."
+    },
+    "react": {
+        "term": "React",
+        "definition": "A JavaScript library for building user interfaces."
+    }
+}
